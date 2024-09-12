@@ -785,6 +785,14 @@ class InAppMessageActionStreamHandler private constructor(
         )
     }
 
+    override fun inAppMessageError(message: InAppMessage?, errorMessage: String, context: Context) {
+        // not yet impl
+    }
+
+    override fun inAppMessageShown(message: InAppMessage, context: Context) {
+        // not yet impl
+    }
+
     private fun handle(action: InAppMessageAction): Boolean {
         val sink = eventSink
         if (sink != null) {

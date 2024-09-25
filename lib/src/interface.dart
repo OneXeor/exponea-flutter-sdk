@@ -134,4 +134,81 @@ abstract class BaseInterface {
 
   /// Fetches AppInbox message by ID for the current customer
   Future<AppInboxMessage> fetchAppInboxItem(String messageId);
+
+  /// Track in-app content block click event
+  Future<void> trackInAppContentBlockClick(String placeholderId, InAppContentBlock contentBlock, InAppContentBlockAction action);
+
+  /// Track in-app content block click event
+  Future<void> trackInAppContentBlockClickWithoutTrackingConsent(String placeholderId, InAppContentBlock contentBlock, InAppContentBlockAction action);
+
+  /// Track in-app content block close event
+  Future<void> trackInAppContentBlockClose(String placeholderId, InAppContentBlock contentBlock);
+
+  /// Track in-app content block close event
+  Future<void> trackInAppContentBlockCloseWithoutTrackingConsent(String placeholderId, InAppContentBlock contentBlock);
+
+  /// Track in-app content block show event
+  Future<void> trackInAppContentBlockShown(String placeholderId, InAppContentBlock contentBlock);
+
+  /// Track in-app content block show event
+  Future<void> trackInAppContentBlockShownWithoutTrackingConsent(String placeholderId, InAppContentBlock contentBlock);
+
+  /// Track in-app content block error event
+  Future<void> trackInAppContentBlockError(String placeholderId, InAppContentBlock contentBlock, String errorMessage);
+
+  /// Track in-app content block error event
+  Future<void> trackInAppContentBlockErrorWithoutTrackingConsent(String placeholderId, InAppContentBlock contentBlock, String errorMessage);
+  
+  /// Track in-app message click event
+  Future<void> trackInAppMessageClick(InAppMessage message, InAppMessageButton button);
+
+  /// Track in-app message click event
+  Future<void> trackInAppMessageClickWithoutTrackingConsent(InAppMessage message, InAppMessageButton button);
+
+  /// Track in-app message close event
+  Future<void> trackInAppMessageClose(InAppMessage message, {bool interaction = true});
+
+  /// Track in-app message close event
+  Future<void> trackInAppMessageCloseWithoutTrackingConsent(InAppMessage message, {bool interaction = true});
+
+  /// Track payment event.
+  Future<void> trackPaymentEvent(PurchasedItem purchasedItem, {DateTime? timestamp});
+
+  /// Track FCM/APNS push token
+  Future<void> trackPushToken(String token);
+
+  /// Track HMS push token
+  /// Only for Android
+  Future<void> trackHmsPushToken(String token);
+
+  /// Handle FCM/APNS push token
+  Future<void> handlePushToken(String token);
+
+  /// Handle HMS push token
+  /// Only for Android
+  Future<void> handleHmsPushToken(String token);
+
+  /// Track clicked push notification
+  Future<void> trackClickedPush(Map<String, dynamic> data);
+
+  /// Track clicked push notification
+  Future<void> trackClickedPushWithoutTrackingConsent(Map<String, dynamic> data);
+
+  /// Track delivered push notification
+  Future<void> trackDeliveredPush(Map<String, dynamic> data);
+
+  /// Track delivered push notification
+  Future<void> trackDeliveredPushWithoutTrackingConsent(Map<String, dynamic> data);
+
+  /// Checks if push notifications originate from bloomreach
+  Future<bool> isBloomreachNotification(Map<String, String> data);
+
+  /// Handle Campaign click
+  Future<void> handleCampaignClick(String url);
+
+  /// Handle push notification Opened
+  Future<void> handlePushNotificationOpened(Map<String, dynamic> data);
+
+  /// Handle push notification Opened
+  Future<void> handlePushNotificationOpenedWithoutTrackingConsent(Map<String, dynamic> data);
 }

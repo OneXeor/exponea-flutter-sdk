@@ -46,6 +46,14 @@ public class InAppMessageActionStreamHandler: NSObject, FlutterStreamHandler, In
         ))
     }
     
+    public func inAppMessageShown(message: ExponeaSDK.InAppMessage) {
+        // TODO:
+    }
+    
+    public func inAppMessageError(message: ExponeaSDK.InAppMessage?, errorMessage: String) {
+        // TODO:
+    }
+    
     private func handle(action: InAppMessageAction) -> Bool {
         guard let sink = eventSink else {
             pendingData = action
@@ -53,6 +61,14 @@ public class InAppMessageActionStreamHandler: NSObject, FlutterStreamHandler, In
         }
         sink(action.toMap())
         return true
+    }
+
+    public func inAppMessageShown(message: ExponeaSDK.InAppMessage) {
+        // not impl yet
+    }
+
+    public func inAppMessageError(message: ExponeaSDK.InAppMessage?, errorMessage: String) {
+        // not impl yet
     }
 
 }

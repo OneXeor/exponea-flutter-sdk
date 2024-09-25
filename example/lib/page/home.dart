@@ -331,6 +331,24 @@ class _HomePageState extends State<HomePage> {
                 ),
                 ListTile(
                   title: ElevatedButton(
+                    onPressed: () => _trackFirstAppInboxItemAsOpened(context),
+                    child: const Text('Track first as Opened'),
+                  ),
+                ),
+                ListTile(
+                  title: ElevatedButton(
+                    onPressed: () => _trackFirstAppInboxItemAsClicked(context),
+                    child: const Text('Track first as Clicked'),
+                  ),
+                ),
+                ListTile(
+                  title: ElevatedButton(
+                    onPressed: () => _trackPaymentEvent(context),
+                    child: const Text('Track payment event'),
+                  ),
+                ),
+                ListTile(
+                  title: ElevatedButton(
                     onPressed: () => Navigator.of(context).push(
                         MaterialPageRoute(
                             builder: (context) => const InAppCbPage())),
@@ -362,6 +380,34 @@ class _HomePageState extends State<HomePage> {
         var messages = await _plugin.fetchAppInbox();
         if (messages.isEmpty) return "EMPTY APPINBOX";
         return await _plugin.markAppInboxAsRead(messages.first);
+      });
+
+  Future<void> _trackFirstAppInboxItemAsOpened(BuildContext context) async {
+    var messages = await _plugin.fetchAppInbox();
+    if (messages.isEmpty) return;
+    return await _plugin.trackAppInboxOpened(messages.first);
+  }
+
+  Future<void> _trackFirstAppInboxItemAsClicked(BuildContext context) async {
+    var messages = await _plugin.fetchAppInbox();
+    if (messages.isEmpty) return;
+    return await _plugin.trackAppInboxClick(
+        AppInboxAction(
+            title: 'Google', action: 'browser', url: 'https://www.google.com'),
+        messages.first);
+  }
+
+  Future<void> _trackPaymentEvent(BuildContext context) =>
+      _runAndShowResult(context, () async {
+        return await _plugin.trackPaymentEvent(
+          const PurchasedItem(
+            value: 12.34,
+            currency: "EUR",
+            paymentSystem: "Virtual",
+            productId: "handbag",
+            productTitle: "Awesome leather handbag",
+          ),
+        );
       });
 
   Future<void> _checkIsConfigured(BuildContext context) =>

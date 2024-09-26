@@ -45,7 +45,7 @@ public class InAppMessageActionStreamHandler: NSObject, FlutterStreamHandler, In
             interaction: interaction
         ))
     }
-    
+
     private func handle(action: InAppMessageAction) -> Bool {
         guard let sink = eventSink else {
             pendingData = action

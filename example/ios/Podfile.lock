@@ -1,0 +1,68 @@
+PODS:
+  - AnyCodable-FlightSchool (0.6.7)
+  - exponea (0.0.1):
+    - AnyCodable-FlightSchool (= 0.6.7)
+    - ExponeaSDK (= 2.28.0)
+    - Flutter
+  - ExponeaSDK (2.28.0):
+    - SwiftSoup (= 2.6.1)
+  - ExponeaSDK-Notifications (2.28.0)
+  - Flutter (1.0.0)
+  - Nimble (9.2.1)
+  - Quick (4.0.0)
+  - shared_preferences_ios (0.0.1):
+    - Flutter
+  - SwiftSoup (2.6.1)
+  - uni_links (0.0.1):
+    - Flutter
+  - webview_flutter_wkwebview (0.0.1):
+    - Flutter
+    - FlutterMacOS
+
+DEPENDENCIES:
+  - exponea (from `.symlinks/plugins/exponea/ios`)
+  - ExponeaSDK-Notifications
+  - Flutter (from `Flutter`)
+  - Nimble (= 9.2.1)
+  - Quick (= 4.0.0)
+  - shared_preferences_ios (from `.symlinks/plugins/shared_preferences_ios/ios`)
+  - uni_links (from `.symlinks/plugins/uni_links/ios`)
+  - webview_flutter_wkwebview (from `.symlinks/plugins/webview_flutter_wkwebview/darwin`)
+
+SPEC REPOS:
+  trunk:
+    - AnyCodable-FlightSchool
+    - ExponeaSDK
+    - ExponeaSDK-Notifications
+    - Nimble
+    - Quick
+    - SwiftSoup
+
+EXTERNAL SOURCES:
+  exponea:
+    :path: ".symlinks/plugins/exponea/ios"
+  Flutter:
+    :path: Flutter
+  shared_preferences_ios:
+    :path: ".symlinks/plugins/shared_preferences_ios/ios"
+  uni_links:
+    :path: ".symlinks/plugins/uni_links/ios"
+  webview_flutter_wkwebview:
+    :path: ".symlinks/plugins/webview_flutter_wkwebview/darwin"
+
+SPEC CHECKSUMS:
+  AnyCodable-FlightSchool: 261cbe76757802b17d471b9059b21e6fa5edf57b
+  exponea: bab2d790c2c7848b68ae015b75b40a8852592a8e
+  ExponeaSDK: 2df5040d4458abf67083ddbca9662d141767bc71
+  ExponeaSDK-Notifications: 400c10250eb34a8d9f4657c19b21767b1cfab957
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  Nimble: e7e615c0335ee4bf5b0d786685451e62746117d5
+  Quick: 6473349e43b9271a8d43839d9ba1c442ed1b7ac4
+  shared_preferences_ios: 548a61f8053b9b8a49ac19c1ffbc8b92c50d68ad
+  SwiftSoup: 5dd2c1b06afc964f30d99894af6ede22ede627aa
+  uni_links: d97da20c7701486ba192624d99bffaaffcfc298a
+  webview_flutter_wkwebview: 0982481e3d9c78fd5c6f62a002fcd24fc791f1e4
+
+PODFILE CHECKSUM: 5ea6cb0516605bb32f8b8aedd76c324d9603f667
+
+COCOAPODS: 1.15.2
